@@ -1,8 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Selector from "./components/Selector/Selector";
 
 function App() {
-  return <></>;
+  return (
+    <div>
+      <Selector />
+    </div>
+  );
 }
 
 export default App;
