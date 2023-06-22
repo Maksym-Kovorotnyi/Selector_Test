@@ -6,14 +6,10 @@ function Navigation() {
     <div>
       <ul>
         <li>
-          <NavLink exact to="/" activeClassName="active-link">
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/tweets" activeClassName="active-link">
-            Tweets
-          </NavLink>
+          <NavLink to="/tweets">Tweets</NavLink>
         </li>
       </ul>
     </div>

@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getAllUsers } from "../../redux/tweets/tweetsOperations";
+import UsersList from "../../components/UsersList/UsersList";
 
 function TweetsPage() {
-  return <div>TweetsPage</div>;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllUsers());
+  }, [dispatch]);
+  return (
+    <div>
+      <UsersList />
+    </div>
+  );
 }
 
 export default TweetsPage;
