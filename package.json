@@ -1,8 +1,8 @@
 {
-  "name": "selector_test",
+  "name": "Tweets_Test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Maksym-Kovorotnyi.github.io/Selector_Test",
+  "homepage": "https://Maksym-Kovorotnyi.github.io/Tweets_Test",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -45,11 +45,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Maksym-Kovorotnyi/Selector_Test.git"
+    "url": "git+https://github.com/Maksym-Kovorotnyi/Tweets_Test.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Maksym-Kovorotnyi/Selector_Test/issues"
+    "url": "https://github.com/Maksym-Kovorotnyi/Tweets_Test/issues"
   }
 }
