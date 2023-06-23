@@ -7,6 +7,7 @@ import {
   removeUsersFollowers,
 } from "../../redux/tweets/tweetsSlice";
 import { changeUser } from "../../redux/tweets/tweetsOperations";
+import css from "./UserItem.module.css";
 
 function UsersItem() {
   const following = useSelector((state) => state.following);
@@ -55,11 +56,26 @@ function UsersItem() {
           .toString()
           .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return (
-          <li key={id} id={id}>
-            <img width={80} height={80} src={avatar} alt="user" />
-            <p>{tweets} TWEETS</p>
-            <p>{formattedNumber} FOLLOWERS</p>
-            <button onClick={handleFollowBtn} type="button">
+          <li key={id} id={id} className={css.item}>
+            <div className={css.line}>
+              <img
+                className={css.img}
+                width={80}
+                height={80}
+                src={avatar}
+                alt="user"
+              />
+            </div>
+
+            <p className={`${css.itemText} ${css.tweets}`}>{tweets} TWEETS</p>
+            <p className={`${css.itemText} ${css.followers}`}>
+              {formattedNumber} FOLLOWERS
+            </p>
+            <button
+              className={`${css.btn} ${isFollowing ? css.active : ""}`}
+              onClick={handleFollowBtn}
+              type="button"
+            >
               {followBtnText}
             </button>
           </li>
