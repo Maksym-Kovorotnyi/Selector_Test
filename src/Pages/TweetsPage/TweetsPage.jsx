@@ -6,7 +6,7 @@ import UsersList from "../../components/UsersList/UsersList";
 function TweetsPage() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllUsers());
+    dispatch(getAllUsers(1, 3));
   }, [dispatch]);
   return (
     <div>

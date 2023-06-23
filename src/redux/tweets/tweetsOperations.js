@@ -6,9 +6,23 @@ axios.defaults.baseURL =
 
 export const getAllUsers = createAsyncThunk(
   "userCards/getAllUsers",
-  async (__, { rejectWithValue }) => {
+  async ({ page = 1, limit = 3 }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("/userCards");
+      const { data } = await axios.get(
+        `/userCards/?page=${page}&limit=${limit}`
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const changeUser = createAsyncThunk(
+  "userCards/changeUser",
+  async ({ id, updateInfo }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.put(`/userCards/${id}`, updateInfo);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
