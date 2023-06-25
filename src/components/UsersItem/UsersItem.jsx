@@ -7,6 +7,7 @@ import {
   removeUsersFollowers,
 } from "../../redux/tweets/tweetsSlice";
 import { changeUser } from "../../redux/tweets/tweetsOperations";
+import circleIcon from "../../images/Ellipse.svg";
 import css from "./UserItem.module.css";
 
 function UsersItem() {
@@ -58,10 +59,11 @@ function UsersItem() {
         return (
           <li key={id} id={id} className={css.item}>
             <div className={css.line}>
+              <img className={css.circle} src={circleIcon} alt="circle" />
               <img
                 className={css.img}
-                width={80}
-                height={80}
+                width={62}
+                height={62}
                 src={avatar}
                 alt="user"
               />

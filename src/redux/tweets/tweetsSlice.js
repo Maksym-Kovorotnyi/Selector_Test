@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { changeUser, getAllUsers } from "./tweetsOperations";
+import { getAllUsers } from "./tweetsOperations";
 
 const tweetsSlice = createSlice({
   name: "tweets",
@@ -22,11 +22,9 @@ const tweetsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(getAllUsers.fulfilled, (state, { payload }) => {
-        state.users = payload;
-      })
-      .addCase(changeUser.fulfilled, (state, { payload }) => {});
+    builder.addCase(getAllUsers.fulfilled, (state, { payload }) => {
+      state.users = payload;
+    });
   },
 });
 

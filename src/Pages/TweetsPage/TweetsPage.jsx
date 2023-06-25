@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllUsers } from "../../redux/tweets/tweetsOperations";
 import UsersList from "../../components/UsersList/UsersList";
+import BackBtn from "../../components/BackBtn/BackBtn";
 
 function TweetsPage() {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ function TweetsPage() {
   return (
     <div>
       <UsersList />
+      <BackBtn />
     </div>
   );
 }

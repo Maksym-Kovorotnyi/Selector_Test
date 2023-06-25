@@ -1,0 +1,19 @@
+.backBtn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: inline-block;
+    background-color: #ebd8ff;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+}
+
+.backBtn:hover {
+
+    opacity: 1;
+}

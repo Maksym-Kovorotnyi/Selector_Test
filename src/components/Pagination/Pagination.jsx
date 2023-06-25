@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import css from "./Pagination.module.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getAllUsers } from "../../redux/tweets/tweetsOperations";
 
-function Pagination({ currentPage, totalPages, onPageChange }) {
-  const renderPageNumbers = () => {
-    const pageNumbers = [];
+const Pagination = () => {
+  const [limit, setLimit] = useState(3);
+  const dispatch = useDispatch();
 
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(
-        <li
-          key={i}
-          className={currentPage === i ? "active" : ""}
-          onClick={() => onPageChange(i)}
-        >
-          {i}
-        </li>
-      );
-    }
+  useEffect(() => {
+    dispatch(getAllUsers({ page: 1, limit }));
+  }, [dispatch, limit]);
 
-    return pageNumbers;
+  const handleLimitChange = () => {
+    setLimit(limit + 3);
   };
 
   return (
-    <div className="pagination">
-      <ul>{renderPageNumbers()}</ul>
-    </div>
+    <>
+      {limit === 12 ? (
+        ""
+      ) : (
+        <button className={css.btn} onClick={handleLimitChange}>
+          Load more
+        </button>
+      )}
+    </>
   );
-}
+};
 
 export default Pagination;

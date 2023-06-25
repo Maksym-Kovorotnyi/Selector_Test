@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />}></Route>
           <Route path="tweets" element={<TweetsPage />}></Route>
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
     </div>
